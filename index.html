@@ -24,24 +24,25 @@
 
       <section class="panel compact">
         <div class="head"><h2>記録</h2><button id="resetCardsBtn" class="btn ghost">解除</button></div>
-        <button id="saveHandBtn" class="btn primary save topSave">保存</button>
         <div id="selectedCards" class="selected"><div class="empty">1枚目</div><div class="empty">2枚目</div></div>
         <div id="deckGrid" class="deck"></div>
         <div class="pick2">
-          <div class="pickBlock"><div class="pickLabel">Pos</div><input id="positionInput" type="hidden"><div id="positionPick" class="pickGrid posPick"></div></div>
+          <div class="pickBlock"><div class="pickLabel">Position</div><input id="positionInput" type="hidden"><div id="positionPick" class="pickGrid posPick"></div></div>
           <div class="pickBlock"><div class="pickLabel">Action</div><input id="actionInput" type="hidden"><div id="actionPick" class="pickGrid actionPick"></div></div>
         </div>
-        <label class="memo">Memo<textarea id="memoInput" rows="1" placeholder="任意"></textarea></label>
+        <label class="memo"><textarea id="memoInput" rows="1" placeholder="Memo"></textarea></label>
+        <button id="saveHandBtn" class="btn primary save">保存</button>
       </section>
 
       <section class="panel">
         <div class="head"><h2>履歴</h2><button id="toggleFiltersBtn" class="btn ghost">Filter</button></div>
         <div id="filters" class="filters hidden">
           <label>日付<input id="dateFilter" type="date"></label>
-          <label>Pos<select id="positionFilter"><option value="">すべて</option></select></label>
+          <label>Position<select id="positionFilter"><option value="">すべて</option></select></label>
           <label>Action<select id="actionFilter"><option value="">すべて</option></select></label>
           <button id="clearFiltersBtn" class="btn sub">解除</button>
         </div>
+        <div id="handHeatmap" class="heatmap"></div>
         <div id="historyList" class="history"></div>
       </section>
 

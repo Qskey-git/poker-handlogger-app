@@ -21,3 +21,9 @@ Poker Hand Logger static v2
 PWA:
 - file:// で開いた場合、Service Worker/PWAインストールは制限されます。
 - HTTPSで配信するとホーム画面追加が使いやすくなります。
+
+
+v8変更:
+- 集計の 3bet% を 3bet+% に変更。
+- 3bet+% = (3bet + 4bet+ + All-in) / (Call + 3bet + Call3 + 4bet+ + Call4+ + All-in)。
+- 未選択時の1枚目/2枚目ボタンをUnknownに近い明るい色へ変更。
