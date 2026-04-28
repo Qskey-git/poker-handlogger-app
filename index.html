@@ -17,8 +17,7 @@
 
     <main>
       <section class="panel compact">
-        <div class="head"><h2>セッション</h2><button id="newSessionBtn" class="btn sub">新規</button></div>
-        <div class="row"><select id="sessionSelect"></select><button id="editSessionBtn" class="btn ghost">編集</button></div>
+        <div class="row sessionRow"><select id="sessionSelect"></select><button id="newSessionBtn" class="btn sub">新規</button><button id="editSessionBtn" class="btn ghost">編集</button></div>
         <div id="sessionMeta" class="meta"></div>
       </section>
 
@@ -74,6 +73,23 @@
         <button value="cancel" class="btn ghost">Cancel</button>
         <button id="deleteSessionBtn" type="button" class="btn danger hidden">セッション削除</button>
         <button id="saveSessionBtn" value="default" class="btn primary">保存</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="editHandDialog">
+    <form id="editHandForm" method="dialog" class="dialog">
+      <h3>記録編集</h3>
+      <div class="editGrid">
+        <label>1枚目<select id="editCard1Input"></select></label>
+        <label>2枚目<select id="editCard2Input"></select></label>
+        <label>Position<select id="editPositionInput"></select></label>
+        <label>Action<select id="editActionInput"></select></label>
+      </div>
+      <label>Memo<textarea id="editMemoInput" rows="2"></textarea></label>
+      <div class="dialogBtns">
+        <button value="cancel" class="btn ghost">Cancel</button>
+        <button id="saveEditHandBtn" value="default" class="btn primary">保存</button>
       </div>
     </form>
   </dialog>

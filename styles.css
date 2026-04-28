@@ -53,3 +53,20 @@
 .rangeCell.suited::before{background:#38bdf8}
 .rangeCell.offsuit::before{background:#a78bfa}
 @media(max-width:520px){.heatmap{padding:6px}.rangeGrid{gap:1px}.rangeCell{border-radius:3px}.rangeCell b{font-size:8px}.rangeCell span{display:none}}
+
+/* v12 requested refinements */
+.sessionRow{grid-template-columns:1fr auto auto;}
+.actionPick .pickBtn.action-fold,
+.actionPick .pickBtn.action-open,
+.actionPick .pickBtn.action-call{background:#0b1220!important;border-color:var(--line)!important;color:var(--text)!important;}
+.rangeCell.pair::before,
+.rangeCell.suited::before,
+.rangeCell.offsuit::before{background:#38bdf8;}
+@media(max-width:520px){.sessionRow{grid-template-columns:1fr auto auto;}}
+
+
+/* v13 hand history edit */
+.handBtns{display:flex;gap:4px;align-items:center;justify-content:flex-end}
+.editHand{padding:4px 7px;min-height:26px;background:transparent;color:var(--accent);border-color:#1f4d66}
+.editGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:520px){.handBtns{gap:3px}.editHand,.del{padding:4px 6px}.editGrid{grid-template-columns:1fr 1fr}}
