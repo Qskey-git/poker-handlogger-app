@@ -17,26 +17,27 @@
 
     <main>
       <section class="panel compact">
-        <div class="row sessionRow"><select id="sessionSelect"></select><button id="newSessionBtn" class="btn sub">新規</button><button id="editSessionBtn" class="btn ghost">編集</button></div>
+        <div class="row sessionRow"><select id="sessionSelect"></select><button id="editSessionBtn" class="btn ghost">編集</button><button id="newSessionBtn" class="btn sub">新規</button></div>
         <div id="sessionMeta" class="meta"></div>
       </section>
 
       <section class="panel compact">
         <div class="head"><h2>記録</h2><button id="resetCardsBtn" class="btn ghost">解除</button></div>
-        <div id="selectedCards" class="selected"><div class="empty">1枚目</div><div class="empty">2枚目</div></div>
+        <div class="recordTop">
+          <div id="selectedCards" class="selected"><div class="empty">1枚目</div><div class="empty">2枚目</div></div>
+          <button id="saveHandBtn" class="btn primary save saveSide">保存</button>
+        </div>
         <div id="deckGrid" class="deck"></div>
         <div class="pick2">
           <div class="pickBlock"><div class="pickLabel">Position</div><input id="positionInput" type="hidden"><div id="positionPick" class="pickGrid posPick"></div></div>
           <div class="pickBlock"><div class="pickLabel">Action</div><input id="actionInput" type="hidden"><div id="actionPick" class="pickGrid actionPick"></div></div>
         </div>
         <label class="memo"><textarea id="memoInput" rows="1" placeholder="Memo"></textarea></label>
-        <button id="saveHandBtn" class="btn primary save">保存</button>
       </section>
 
       <section class="panel">
         <div class="head"><h2>履歴</h2><button id="toggleFiltersBtn" class="btn ghost">Filter</button></div>
         <div id="filters" class="filters hidden">
-          <label>日付<input id="dateFilter" type="date"></label>
           <label>Position<select id="positionFilter"><option value="">すべて</option></select></label>
           <label>Action<select id="actionFilter"><option value="">すべて</option></select></label>
           <button id="clearFiltersBtn" class="btn sub">解除</button>
@@ -46,7 +47,7 @@
       </section>
 
       <section class="panel compact">
-        <div class="head"><h2>集計</h2><span id="countBadge" class="badge">0</span></div>
+        <div class="head"><h2>統計</h2></div>
         <div id="statsGrid" class="stats"></div>
       </section>
 

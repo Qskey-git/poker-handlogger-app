@@ -70,3 +70,23 @@
 .editHand{padding:4px 7px;min-height:26px;background:transparent;color:var(--accent);border-color:#1f4d66}
 .editGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 @media(max-width:520px){.handBtns{gap:3px}.editHand,.del{padding:4px 6px}.editGrid{grid-template-columns:1fr 1fr}}
+
+/* v14 requested layout and history refinements */
+.recordTop{display:grid;grid-template-columns:1fr 64px;gap:6px;align-items:stretch;margin-bottom:7px;}
+.recordTop .selected{margin-bottom:0;}
+.saveSide{width:100%;height:48px;margin:0;padding:6px 8px;}
+.posPick .pickBtn:first-child.sel,
+.actionPick .pickBtn:first-child.sel{background:#7dd3fc!important;border-color:#7dd3fc!important;color:#00111d!important;}
+.rangeCell.pair::before{background:#facc15;}
+.rangeCell.suited::before{background:#38bdf8;}
+.rangeCell.offsuit::before{background:#a78bfa;}
+.historyBox .handRow:first-child{border-top:0;}
+.moreBtn{width:100%;}
+@media(max-width:520px){.recordTop{grid-template-columns:1fr 58px}.saveSide{padding:6px 5px}}
+
+
+/* v16 requested refinements */
+.filters{grid-template-columns:1fr 1fr auto;}
+@media(max-width:520px){.filters{grid-template-columns:1fr 1fr}.filters .btn{grid-column:1/-1}}
+.actionPick .pickBtn.sel{background:#38bdf8!important;color:#00111d!important;border-color:#38bdf8!important;}
+.rangeCell.pair::before{background:#c96a1b;}
