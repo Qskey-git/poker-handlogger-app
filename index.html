@@ -17,11 +17,6 @@
 
     <main>
       <section class="panel compact">
-        <div class="row sessionRow"><select id="sessionSelect"></select><button id="editSessionBtn" class="btn ghost">編集</button><button id="newSessionBtn" class="btn sub">新規</button></div>
-        <div id="sessionMeta" class="meta"></div>
-      </section>
-
-      <section class="panel compact">
         <div class="head"><h2>記録</h2><button id="resetCardsBtn" class="btn ghost">解除</button></div>
         <div class="recordTop">
           <div id="selectedCards" class="selected"><div class="empty">1枚目</div><div class="empty">2枚目</div></div>
@@ -52,6 +47,12 @@
       </section>
 
       <section class="panel compact">
+        <div class="head"><h2>セッション</h2></div>
+        <div class="row sessionRow"><select id="sessionSelect"></select><button id="editSessionBtn" class="btn ghost">編集</button><button id="newSessionBtn" class="btn sub">新規</button></div>
+        <div id="sessionMeta" class="meta"></div>
+      </section>
+
+      <section class="panel compact">
         <div class="head"><h2>操作</h2></div>
         <div class="ops">
           <button id="exportBtn" class="btn sub">CSV出力</button>
@@ -70,9 +71,9 @@
       <label>追記<input id="sessionSuffixInput"></label>
       <label>種別<select id="sessionTypeInput"><option value="tournament">Tournament</option><option value="cash">Cash</option><option value="study">Study</option><option value="other">Other</option></select></label>
       <label>メモ<textarea id="sessionNoteInput" rows="2"></textarea></label>
-      <div class="dialogBtns">
-        <button value="cancel" class="btn ghost">Cancel</button>
+      <div class="dialogBtns sessionDialogBtns">
         <button id="deleteSessionBtn" type="button" class="btn danger hidden">セッション削除</button>
+        <button value="cancel" class="btn ghost">Cancel</button>
         <button id="saveSessionBtn" value="default" class="btn primary">保存</button>
       </div>
     </form>
@@ -88,7 +89,8 @@
         <label>Action<select id="editActionInput"></select></label>
       </div>
       <label>Memo<textarea id="editMemoInput" rows="2"></textarea></label>
-      <div class="dialogBtns">
+      <div class="dialogBtns editHandDialogBtns">
+        <button id="deleteEditHandBtn" type="button" class="btn danger">削除</button>
         <button value="cancel" class="btn ghost">Cancel</button>
         <button id="saveEditHandBtn" value="default" class="btn primary">保存</button>
       </div>

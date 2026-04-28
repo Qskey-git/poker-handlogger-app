@@ -90,3 +90,9 @@
 @media(max-width:520px){.filters{grid-template-columns:1fr 1fr}.filters .btn{grid-column:1/-1}}
 .actionPick .pickBtn.sel{background:#38bdf8!important;color:#00111d!important;border-color:#38bdf8!important;}
 .rangeCell.pair::before{background:#c96a1b;}
+
+
+/* v17 requested refinements */
+.sessionDialogBtns #deleteSessionBtn,
+.editHandDialogBtns #deleteEditHandBtn{margin-right:auto;}
+.handBtns{min-width:44px;}
