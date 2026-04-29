@@ -220,3 +220,14 @@
   .cardColumn .selected{gap:4px;}
   .suitMarks{font-size:13px;letter-spacing:.05em;}
 }
+
+/* v29 share preview and English label refinements */
+#shareHeatmapDialog{width:min(760px,calc(100vw - 28px));max-width:calc(100vw - 28px);}
+.shareDialog{width:100%;max-width:100%;overflow:hidden;}
+.shareHeatmapImage{max-width:100%;}
+.file.btn{color:var(--text);font-size:13px;font-weight:400;}
+@media(max-width:520px){
+  #shareHeatmapDialog{width:calc(100vw - 32px);max-width:calc(100vw - 32px);}
+  .shareDialog{padding:10px;}
+  .shareHeatmapImage{width:100%;max-width:100%;}
+}
