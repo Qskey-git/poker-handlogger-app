@@ -33,7 +33,7 @@
       </section>
 
       <section class="panel">
-        <div class="head"><h2>履歴</h2><div class="historyActions"><button id="toggleHeatmapBtn" class="btn ghost">Heatmap</button><button id="toggleFiltersBtn" class="btn ghost">Filter</button></div></div>
+        <div class="head"><h2>履歴</h2><div class="historyActions"><button id="shareHeatmapBtn" class="btn ghost">Share</button><button id="toggleHeatmapBtn" class="btn ghost">Heatmap</button><button id="toggleFiltersBtn" class="btn ghost">Filter</button></div></div>
         <div id="filters" class="filters hidden">
           <label>Position<select id="positionFilter"><option value="">すべて</option></select></label>
           <label>Action<select id="actionFilter"><option value="">すべて</option></select></label>
@@ -94,6 +94,16 @@
         <button id="saveEditHandBtn" value="default" class="btn primary">保存</button>
       </div>
     </form>
+  </dialog>
+
+  <dialog id="shareHeatmapDialog">
+    <div class="dialog shareDialog">
+      <div class="shareDialogHead">
+        <h3>Heat Map Share</h3>
+        <button id="closeShareHeatmapBtn" type="button" class="btn ghost">Close</button>
+      </div>
+      <img id="shareHeatmapImage" class="shareHeatmapImage" alt="Heat map image">
+    </div>
   </dialog>
 
   <div id="toast" class="toast hidden"></div>
