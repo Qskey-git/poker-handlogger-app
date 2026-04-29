@@ -64,7 +64,7 @@
   </div>
 
   <dialog id="sessionDialog">
-    <form method="dialog" class="dialog">
+    <form id="sessionForm" class="dialog">
       <h3 id="sessionDialogTitle">Session</h3>
       <label>Date<input id="sessionDateInput" type="date" required></label>
       <label>Note<input id="sessionSuffixInput"></label>
@@ -72,14 +72,14 @@
       <label>Memo<textarea id="sessionNoteInput" rows="2"></textarea></label>
       <div class="dialogBtns sessionDialogBtns">
         <button id="deleteSessionBtn" type="button" class="btn danger hidden">Delete session</button>
-        <button value="cancel" class="btn ghost">Cancel</button>
-        <button id="saveSessionBtn" value="default" class="btn primary">Save</button>
+        <button id="cancelSessionBtn" type="button" class="btn ghost">Cancel</button>
+        <button id="saveSessionBtn" type="button" class="btn primary">Save</button>
       </div>
     </form>
   </dialog>
 
   <dialog id="editHandDialog">
-    <form id="editHandForm" method="dialog" class="dialog">
+    <form id="editHandForm" class="dialog">
       <h3>Edit record</h3>
       <div class="editGrid">
         <label>1st hand<select id="editCard1Input"></select></label>
@@ -90,8 +90,8 @@
       <label>Memo<textarea id="editMemoInput" rows="2"></textarea></label>
       <div class="dialogBtns editHandDialogBtns">
         <button id="deleteEditHandBtn" type="button" class="btn danger">Delete record</button>
-        <button value="cancel" class="btn ghost">Cancel</button>
-        <button id="saveEditHandBtn" value="default" class="btn primary">Save</button>
+        <button id="cancelEditHandBtn" type="button" class="btn ghost">Cancel</button>
+        <button id="saveEditHandBtn" type="button" class="btn primary">Save</button>
       </div>
     </form>
   </dialog>
