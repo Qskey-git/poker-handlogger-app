@@ -41,11 +41,11 @@ function renderStats(){const rows=filtered(),grid=$('statsGrid');grid.innerHTML=
   const known=rows.filter(h=>h.action);
   const count=a=>known.filter(h=>h.action===a).length;
   const pct=(num,den)=>den?`${((num/den)*100).toFixed(1)}%`:'-';
-  const vpipActions=['Open','Call','3bet','Call3','4bet+','Call4+','All-in'];
-  const pfrActions=['Open','3bet','4bet+','All-in'];
+  const vpipActions=['Open','Call','3bet','Call3','4bet+','Call4+','FoldR'];
+  const pfrActions=['Open','3bet','4bet+','FoldR'];
   const vpip=known.filter(h=>vpipActions.includes(h.action)).length;
   const pfr=known.filter(h=>pfrActions.includes(h.action)).length;
-  const threeBetPlus=count('3bet')+count('4bet+')+count('All-in'), threeBetPlusDen=count('Call')+count('3bet')+count('Call3')+count('4bet+')+count('Call4+')+count('All-in');
+  const threeBetPlus=count('3bet')+count('4bet+'), threeBetPlusDen=count('Call')+count('3bet')+count('Call3')+count('4bet+')+count('Call4+');
   const add=(parent,k,v)=>{const d=document.createElement('div');d.className='stat';d.innerHTML=`<b>${v}</b><span>${k}</span>`;parent.appendChild(d)};
   const top=document.createElement('div');top.className='statsRow statsTop';
   add(top,'Total / Known',`${rows.length} / ${known.length}`);add(top,'VPIP',pct(vpip,known.length));add(top,'PFR',pct(pfr,known.length));add(top,'3bet+%',pct(threeBetPlus,threeBetPlusDen));grid.appendChild(top);
