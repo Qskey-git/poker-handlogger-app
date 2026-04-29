@@ -17,21 +17,23 @@
 
     <main>
       <section class="panel compact">
-        <div class="head"><h2>記録</h2><button id="resetCardsBtn" class="btn ghost">解除</button></div>
-        <div class="recordTop">
-          <div id="selectedCards" class="selected"><div class="empty">1枚目</div><div class="empty">2枚目</div></div>
-          <button id="saveHandBtn" class="btn primary save saveSide">保存</button>
+        <div class="head"><h2>記録</h2><button id="resetCardsBtn" class="btn ghost">リセット</button></div>
+        <div class="recordControls">
+          <div class="cardColumn">
+            <div id="selectedCards" class="selected"><div class="empty"></div><div class="empty"></div></div>
+            <button id="saveHandBtn" class="btn primary save saveSide">保存</button>
+          </div>
+          <div class="pick2">
+            <div class="pickBlock"><input id="positionInput" type="hidden"><div id="positionPick" class="pickGrid posPick"></div></div>
+            <div class="pickBlock"><input id="actionInput" type="hidden"><div id="actionPick" class="pickGrid actionPick"></div></div>
+          </div>
         </div>
         <div id="deckGrid" class="deck"></div>
-        <div class="pick2">
-          <div class="pickBlock"><div class="pickLabel">Position</div><input id="positionInput" type="hidden"><div id="positionPick" class="pickGrid posPick"></div></div>
-          <div class="pickBlock"><div class="pickLabel">Action</div><input id="actionInput" type="hidden"><div id="actionPick" class="pickGrid actionPick"></div></div>
-        </div>
         <label class="memo"><textarea id="memoInput" rows="1" placeholder="Memo"></textarea></label>
       </section>
 
       <section class="panel">
-        <div class="head"><h2>履歴</h2><button id="toggleFiltersBtn" class="btn ghost">Filter</button></div>
+        <div class="head"><h2>履歴</h2><div class="historyActions"><button id="toggleHeatmapBtn" class="btn ghost">Heatmap</button><button id="toggleFiltersBtn" class="btn ghost">Filter</button></div></div>
         <div id="filters" class="filters hidden">
           <label>Position<select id="positionFilter"><option value="">すべて</option></select></label>
           <label>Action<select id="actionFilter"><option value="">すべて</option></select></label>
@@ -47,19 +49,16 @@
       </section>
 
       <section class="panel compact">
-        <div class="head"><h2>セッション</h2></div>
-        <div class="row sessionRow"><select id="sessionSelect"></select><button id="editSessionBtn" class="btn ghost">編集</button><button id="newSessionBtn" class="btn sub">新規</button></div>
-        <div id="sessionMeta" class="meta"></div>
-      </section>
-
-      <section class="panel compact">
-        <div class="head"><h2>操作</h2></div>
-        <div class="ops">
-          <button id="exportBtn" class="btn sub">CSV出力</button>
-          <label class="btn sub file">CSV読取<input id="importInput" type="file" accept=".csv,text/csv"></label>
-          <button id="deleteSessionHandsBtn" class="btn danger">履歴全削除</button>
-          <button id="deleteAllBtn" class="btn danger">全データ削除</button>
+        <div class="head sessionHead">
+          <h2>セッション</h2>
+          <div class="sessionHeadActions">
+            <button id="exportBtn" class="btn sub">CSV出力</button>
+            <label class="btn sub file">CSV読取<input id="importInput" type="file" accept=".csv,text/csv"></label>
+            <button id="newSessionBtn" class="btn sub">新規</button>
+          </div>
         </div>
+        <div class="row sessionRow"><select id="sessionSelect"></select><button id="editSessionBtn" class="btn editSessionAction">編集</button></div>
+        <div id="sessionMeta" class="meta"></div>
       </section>
     </main>
   </div>
@@ -69,7 +68,7 @@
       <h3 id="sessionDialogTitle">セッション</h3>
       <label>日付<input id="sessionDateInput" type="date" required></label>
       <label>追記<input id="sessionSuffixInput"></label>
-      <label>種別<select id="sessionTypeInput"><option value="tournament">Tournament</option><option value="cash">Cash</option><option value="study">Study</option><option value="other">Other</option></select></label>
+      <label>種別<select id="sessionTypeInput"><option value="mtt">MTT</option><option value="cash">Cash</option><option value="other">Other</option></select></label>
       <label>メモ<textarea id="sessionNoteInput" rows="2"></textarea></label>
       <div class="dialogBtns sessionDialogBtns">
         <button id="deleteSessionBtn" type="button" class="btn danger hidden">セッション削除</button>

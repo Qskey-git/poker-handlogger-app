@@ -96,3 +96,73 @@
 .sessionDialogBtns #deleteSessionBtn,
 .editHandDialogBtns #deleteEditHandBtn{margin-right:auto;}
 .handBtns{min-width:44px;}
+
+/* v19 requested refinements */
+.historyActions{display:flex;gap:6px;align-items:center;justify-content:flex-end;}
+.sessionOps{margin-top:8px;}
+.rangeCell.pair{border-color:rgba(255,255,255,.78);box-shadow:inset 0 0 0 1px rgba(255,255,255,.42);}
+.rangeCell.pair::before{background:#38bdf8;}
+@media(max-width:520px){.historyActions{gap:4px}.historyActions .btn{padding:6px 7px}.sessionOps{margin-top:7px}}
+
+
+/* v20 requested refinements */
+.sessionHead{align-items:center;}
+.sessionHeadActions{display:flex;gap:6px;align-items:center;justify-content:flex-end;flex-wrap:wrap;}
+.sessionRow{grid-template-columns:1fr auto!important;}
+.rangeCell.pair{border-color:rgba(255,255,255,.32);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12);}
+@media(max-width:520px){.sessionHead{align-items:flex-start}.sessionHeadActions{gap:4px}.sessionHeadActions .btn{padding:6px 7px}.sessionRow{grid-template-columns:1fr auto!important;}}
+
+/* v22 requested record layout refinements */
+.recordControls{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,2fr);gap:6px;align-items:stretch;margin-bottom:7px;}
+.cardColumn{display:grid;grid-template-rows:1fr 34px;gap:6px;min-height:0;}
+.cardColumn .selected{height:100%;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.cardColumn .card,.cardColumn .empty{height:100%;min-height:0;}
+.cardColumn .empty{background:#7dd3fc;border-color:#7dd3fc;color:#00111d;}
+.cardColumn .empty.active{background:#38bdf8;border-color:#38bdf8;box-shadow:inset 0 0 0 1px rgba(0,17,29,.18);}
+.cardColumn .saveSide{height:34px;min-height:34px;margin:0;}
+.recordControls .pick2{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:0;}
+.recordControls .pickBlock{display:block;}
+.recordControls .pickGrid{display:grid;grid-template-columns:1fr!important;grid-auto-flow:row;gap:4px;height:100%;}
+.recordControls .posPick .pickBtn:first-child,.recordControls .actionPick .pickBtn:first-child{grid-column:auto;grid-row:auto;min-width:0;height:auto;white-space:nowrap;}
+.recordControls .pickBtn{min-height:0;height:auto;padding:4px 6px;}
+@media(max-width:520px){.recordControls{grid-template-columns:minmax(0,1.35fr) minmax(0,2fr);gap:5px}.recordControls .pick2{gap:5px}.recordControls .pickBtn{padding:4px 4px;font-size:12px}.cardColumn{grid-template-rows:1fr 32px;gap:5px}.cardColumn .saveSide{height:32px;min-height:32px;padding:5px 4px}}
+
+
+/* v24 selection color and ordering refinements */
+.recordControls .pickGrid{grid-template-rows:repeat(9,1fr);}
+.recordControls .pickBtn.noneBtn{order:99;}
+.recordControls .pickBtn.noneBtn.sel{background:#24465b!important;border-color:#4c7690!important;color:#f8fafc!important;}
+.recordControls .cardColumn .empty{background:#24465b!important;border-color:#4c7690!important;color:#f8fafc!important;}
+.recordControls .cardColumn .empty.active{background:#38bdf8!important;border-color:#38bdf8!important;color:#00111d!important;box-shadow:none!important;}
+.suitMarks{letter-spacing:.14em;white-space:nowrap;font-size:15px;font-weight:900;color:inherit;}
+
+
+/* v25 requested refinements */
+.heatmapHead{display:none!important;}
+.heatmapFoot{display:flex;justify-content:flex-start;align-items:center;gap:10px;margin-top:2px;font-size:11px;color:var(--muted);white-space:nowrap;}
+.heatmapFoot span{font-size:11px;color:var(--muted);font-weight:600;}
+.rangeCell.pair{border-color:rgba(255,255,255,.10)!important;box-shadow:none!important;}
+.rangeCell.pair::before{background:#c96a1b!important;}
+.rangeCell.suited::before{background:#a78bfa!important;}
+.rangeCell.offsuit::before{background:#38bdf8!important;}
+.editSessionAction{padding:4px 7px;min-height:26px;background:transparent;color:var(--accent);border-color:#1f4d66;}
+
+
+/* v26 fine GUI refinements */
+.recordControls .posPick .pickBtn:first-child.sel,
+.recordControls .actionPick .pickBtn:first-child.sel{
+  background:#38bdf8!important;
+  border-color:#38bdf8!important;
+  color:#00111d!important;
+}
+.rangeCell.pair{
+  border-color:rgba(255,255,255,.18)!important;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)!important;
+}
+.rangeCell.pair:not(.hit)::before{
+  background:#38bdf8!important;
+  opacity:.03!important;
+}
+.rangeCell.pair.hit::before{
+  background:#c96a1b!important;
+}
